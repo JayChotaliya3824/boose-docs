@@ -5,28 +5,30 @@ namespace BOOSEInterpreter
     public partial class Form1 : Form
 
     {
-        
+        DrawingCanvas canvas;
+        Parser parser;
+
         public Form1()
         {
             InitializeComponent();
-            
+            this.Load += Form1_Load;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            canvas = new DrawingCanvas(picOutput);
+            parser = new Parser(canvas);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-            AboutBOOSE about = new AboutBOOSE();
 
-            
-            string aboutInfo = about.ToString();
+            canvas.ClearCanvas(); // Clear from previous run
+            string[] commands = txtProgramInput.Lines;
 
-            Debug.WriteLine("--- BOOSE Info ---");
-            Debug.WriteLine(aboutInfo);
-            Debug.WriteLine("--------------------");
-        
+            foreach (string commandLine in commands)
+            {
+                parser.ParseCommand(commandLine); // Tell the parser to work
+            }
 
 
         }
