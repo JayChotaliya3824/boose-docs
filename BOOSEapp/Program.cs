@@ -1,4 +1,4 @@
-namespace BOOSEapp
+namespace BOOSEInterpreter
 {
     internal static class Program
     {

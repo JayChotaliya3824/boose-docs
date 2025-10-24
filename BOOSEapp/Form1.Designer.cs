@@ -1,24 +1,10 @@
-﻿namespace BOOSEapp
+﻿namespace BOOSEInterpreter
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+       
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -28,12 +14,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnRun = new Button();
+            picOutput = new PictureBox();
+            txtProgramInput = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)picOutput).BeginInit();
+            SuspendLayout();
+            // 
+            // btnRun
+            // 
+            btnRun.Location = new Point(514, 523);
+            btnRun.Name = "btnRun";
+            btnRun.Size = new Size(120, 39);
+            btnRun.TabIndex = 0;
+            btnRun.Text = "Run";
+            btnRun.UseVisualStyleBackColor = true;
+            btnRun.Click += button1_Click;
+            // 
+            // picOutput
+            // 
+            picOutput.BackColor = SystemColors.Desktop;
+            picOutput.Location = new Point(219, 185);
+            picOutput.Name = "picOutput";
+            picOutput.Size = new Size(415, 323);
+            picOutput.TabIndex = 1;
+            picOutput.TabStop = false;
+            // 
+            // txtProgramInput
+            // 
+            txtProgramInput.Location = new Point(219, 95);
+            txtProgramInput.Multiline = true;
+            txtProgramInput.Name = "txtProgramInput";
+            txtProgramInput.Size = new Size(415, 61);
+            txtProgramInput.TabIndex = 2;
+            txtProgramInput.TextChanged += textBox1_TextChanged;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(964, 684);
+            Controls.Add(txtProgramInput);
+            Controls.Add(picOutput);
+            Controls.Add(btnRun);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)picOutput).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnRun;
+        private PictureBox picOutput;
+        private TextBox txtProgramInput;
     }
 }
