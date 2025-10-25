@@ -1,5 +1,4 @@
-﻿// CommandFactory.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace BOOSEInterpreter
@@ -10,21 +9,49 @@ namespace BOOSEInterpreter
     public class CommandFactory
     {
         // --- Singleton Pattern ---
-        private static readonly CommandFactory _instance = new CommandFactory();
-        public static CommandFactory Instance => _instance;
+        private static CommandFactory _instance;
+        public static CommandFactory Instance(Parser parser = null)
+        {
+            // Only create once; reuse same instance later
+            if (_instance == null)
+            {
+                _instance = new CommandFactory(parser);
+            }
+
+            // If a new parser is passed later, keep the latest reference
+            if (parser != null)
+            {
+                _instance.parser = parser;
+            }
+
+            return _instance;
+        }
         // --- End Singleton ---
 
-        private Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();
+        private readonly Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();
+        private Parser parser;
 
-        // Private constructor for Singleton
-        private CommandFactory()
+        // Private constructor
+        private CommandFactory(Parser parser)
         {
-            // --- Factory Pattern ---
+            this.parser = parser;
+
+            // --- Register all commands here ---
             commands["moveto"] = new MoveToCommand();
+            commands["drawto"] = new DrawToCommand();
+            commands["rect"] = new RectangleCommand();
             commands["circle"] = new CircleCommand();
-             commands["drawto"] = new DrawToCommand();
-             commands["rect"] = new RectangleCommand();
-             commands["pencolour"] = new PenColourCommand();
+            commands["pencolour"] = new PenColourCommand();
+            commands["fill"] = new FillCommand();
+
+            // Variables
+            commands["int"] = new IntCommand();
+            commands["real"] = new RealCommand();
+            commands["array"] = new ArrayCommand();
+            commands["var"] = new VarCommand();
+
+            // Method-related
+            commands["call"] = new CallCommand(parser);
         }
 
         /// <summary>
@@ -39,5 +66,15 @@ namespace BOOSEInterpreter
             }
             return commands[commandName];
         }
+
+        public bool HasCommand(string commandName)
+        {
+            return commands.ContainsKey(commandName.ToLower());
+        }
+
+        /// <summary>
+        /// Gives commands access to parser functions like EvaluateExpression().
+        /// </summary>
+        public Parser GetParser() => parser;
     }
 }

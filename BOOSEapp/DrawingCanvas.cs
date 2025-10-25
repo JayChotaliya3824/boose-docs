@@ -12,9 +12,9 @@ namespace BOOSEInterpreter
     {
         private Graphics g;
         private Pen currentPen;
-        private Point currentPosition; // Our UNRESTRICTED pen position
+        private Point currentPosition; 
         private PictureBox canvas;
-
+        private bool isFillOn = false; 
         /// <summary>
         /// It initializes a new DrawingCanvas linked to a PictureBox.
         /// </summary>
@@ -30,15 +30,24 @@ namespace BOOSEInterpreter
             ClearCanvas();
         }
 
-        /// <summary>
-        /// This function clears the canvas to white and refreshes.
-        /// </summary>
+        
         public void ClearCanvas()
         {
+            // Check if the bitmap is null, or if the PictureBox size is different.
+            if (canvas.Image == null || canvas.Image.Width != canvas.Width || canvas.Image.Height != canvas.Height)
+            {
+                // If so, create a new, correctly-sized Bitmap
+                // and get a new Graphics object for it.
+                canvas.Image = new Bitmap(canvas.Width, canvas.Height);
+                g = Graphics.FromImage(canvas.Image);
+
+                Debug.WriteLine($"Created new Bitmap with size {canvas.Width}x{canvas.Height}");
+            }
+
+            // Now, clear the (correctly sized) bitmap
             g.Clear(Color.White);
             Refresh();
         }
-
         /// <summary>
         ///This function forces the PictureBox to repaint itself.
         /// </summary>
@@ -55,7 +64,11 @@ namespace BOOSEInterpreter
             return currentPosition;
         }
 
-
+        public void SetFill(bool state) // <-- ADD THIS ENTIRE METHOD
+        {
+            this.isFillOn = state;
+            Debug.WriteLine($"Fill set to: {state}");
+        }
         /// <summary>
         /// Replaces the 'moveto' command.
         /// </summary>
@@ -85,20 +98,36 @@ namespace BOOSEInterpreter
             Debug.WriteLine($"Pen colour set to: {color}");
         }
 
-        /// <summary>
-        /// Replaces the 'rect' command.
-        /// </summary>
+    
         public void DrawRectangle(int width, int height)
         {
-            g.DrawRectangle(currentPen, currentPosition.X, currentPosition.Y, width, height);
+            if (isFillOn)
+            {
+                g.FillRectangle(new SolidBrush(currentPen.Color), currentPosition.X, currentPosition.Y, width, height);
+            }
+            else
+            {
+                g.DrawRectangle(currentPen, currentPosition.X, currentPosition.Y, width, height);
+            }
             Refresh();
         }
 
-        
+
         public void DrawCircle(int radius)
         {
-            g.DrawEllipse(currentPen, currentPosition.X - radius, currentPosition.Y - radius, radius * 2, radius * 2);
+            int topLeftX = currentPosition.X - radius;
+            int topLeftY = currentPosition.Y - radius;
+
+            if (isFillOn)
+            {
+                g.FillEllipse(new SolidBrush(currentPen.Color), topLeftX, topLeftY, radius * 2, radius * 2);
+            }
+            else
+            {
+                g.DrawEllipse(currentPen, topLeftX, topLeftY, radius * 2, radius * 2);
+            }
             Refresh();
         }
+
     }
 }

@@ -7,7 +7,9 @@ namespace BOOSEInterpreter
     {
         public void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
         {
-            canvas.MoveTo(int.Parse(args[1]), int.Parse(args[2]));
+            int x = CommandHelper.EvaluateInt(args[1], variables);
+            int y = CommandHelper.EvaluateInt(args[2], variables);
+            canvas.MoveTo(x, y);
         }
     }
 }

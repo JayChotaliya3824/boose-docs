@@ -1,13 +1,14 @@
-﻿// CircleCommand.cs
+﻿// FillCommand.cs
 using System.Collections.Generic;
+
 namespace BOOSEInterpreter
 {
-    public class CircleCommand : ICommand
+    public class FillCommand : ICommand
     {
         public void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
         {
-            int radius = CommandHelper.EvaluateInt(args[1], variables); 
-            canvas.DrawCircle(radius);
+            bool fillState = args[1].ToLower() == "on";
+            canvas.SetFill(fillState);
         }
     }
 }
