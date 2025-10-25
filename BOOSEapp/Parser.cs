@@ -1,70 +1,49 @@
 ﻿// Parser.cs
 using System;
-using System.Drawing;
 using System.Diagnostics;
+using System.Collections.Generic; // Added for Dictionary
 
 namespace BOOSEInterpreter
 {
-    /// <summary>
-    /// Parses and executes commands for the BOOSE interpreter.
-    /// </summary>
     public class Parser
     {
         private DrawingCanvas canvas;
+        private Dictionary<string, object> variables; // For Task 5
+        private CommandFactory factory;
 
-        /// <summary>
-        /// Creates a new parser linked to a specific canvas.
-        /// </summary>
         public Parser(DrawingCanvas canvas)
         {
             this.canvas = canvas;
+            this.variables = new Dictionary<string, object>();
+            this.factory = CommandFactory.Instance; // Get the Singleton factory
         }
 
-        /// <summary>
-        /// Parses a single line of BOOSE code.
-        /// </summary>
+        // This method will expand in the next steps
+        public void ParseProgram(string[] programLines)
+        {
+            variables.Clear(); // Reset variables for each run
+
+            foreach (string line in programLines)
+            {
+                ParseCommand(line);
+            }
+        }
+
         public void ParseCommand(string commandLine)
         {
             string[] parts = commandLine.Trim().Split(' ');
-            string command = parts[0].ToLower();
+            string commandName = parts[0].ToLower();
 
-            // --- Exception Handling (Task 4 - 5 marks) ---
+            if (string.IsNullOrEmpty(commandName)) return; // Skip empty lines
+
             try
             {
-                switch (command)
-                {
-                    // --- Basic Drawing (Task 6 - 12 marks) ---
-                    case "moveto":
-                        canvas.MoveTo(int.Parse(parts[1]), int.Parse(parts[2]));
-                        break;
-
-                    case "drawto":
-                        canvas.DrawTo(int.Parse(parts[1]), int.Parse(parts[2]));
-                        break;
-
-                    case "pencolour":
-                        canvas.SetPenColour(Color.FromName(parts[1]));
-                        break;
-
-                    case "rect":
-                        canvas.DrawRectangle(int.Parse(parts[1]), int.Parse(parts[2]));
-                        break;
-
-                    case "circle":
-                        canvas.DrawCircle(int.Parse(parts[1]));
-                        break;
-
-                    case "": // Ignore empty lines
-                        break;
-
-                    default:
-                        Debug.WriteLine($"Unknown command: {command}");
-                        break;
-                }
+                // --- Factory Pattern in use! ---
+                ICommand command = factory.GetCommand(commandName);
+                command.Execute(canvas, variables, parts);
             }
             catch (Exception ex)
             {
-                // Graceful error handling
                 Debug.WriteLine($"Error processing '{commandLine}': {ex.Message}");
             }
         }

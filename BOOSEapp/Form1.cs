@@ -22,13 +22,9 @@ namespace BOOSEInterpreter
         private void button1_Click(object sender, EventArgs e)
         {
 
-            canvas.ClearCanvas(); // Clear from previous run
+            canvas.ClearCanvas();
             string[] commands = txtProgramInput.Lines;
-
-            foreach (string commandLine in commands)
-            {
-                parser.ParseCommand(commandLine); // Tell the parser to work
-            }
+            parser.ParseProgram(commands);
 
 
         }
