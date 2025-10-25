@@ -100,7 +100,7 @@ public class CommandTests
         parser.ParseProgram(program);
 
         Point finalPosition = canvas.GetCurrentPosition();
-        Assert.AreEqual(2, finalPosition.X); // Check last position
+        Assert.AreEqual(2, finalPosition.X); 
     }
 
     [TestMethod]

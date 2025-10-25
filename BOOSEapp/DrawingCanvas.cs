@@ -64,7 +64,7 @@ namespace BOOSEInterpreter
             return currentPosition;
         }
 
-        public void SetFill(bool state) // <-- ADD THIS ENTIRE METHOD
+        public void SetFill(bool state) 
         {
             this.isFillOn = state;
             Debug.WriteLine($"Fill set to: {state}");

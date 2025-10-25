@@ -10,7 +10,7 @@ namespace BOOSEInterpreter
     {
         private DrawingCanvas canvas;
         private CommandFactory factory;
-        private ExpressionEvaluator evaluator = new ExpressionEvaluator(); // Fixes CS0103
+        private ExpressionEvaluator evaluator = new ExpressionEvaluator(); 
         public Dictionary<string, MethodDefinition> Methods { get; private set; }
 
         public Parser(DrawingCanvas canvas)
@@ -43,9 +43,7 @@ namespace BOOSEInterpreter
                 {
                     if (command == "method")
                     {
-                        // --- START OF FIX ---
-                        // 'line' is "method draw(p)"
-                        // 'parts' is ["method", "draw(p)"]
+                        
                         if (parts.Length < 2)
                         {
                             throw new ArgumentException("Missing method signature. Expected 'method name(params)'.");
@@ -63,9 +61,7 @@ namespace BOOSEInterpreter
                         // Get "draw" from "draw(p)"
                         string methodName = signature.Substring(0, parenIndex).Trim();
 
-                        // Pass "draw(p)" to the helper, which can parse it
                         string[] paramNames = ParseParameters(signature);
-                        // --- END OF FIX ---
 
                         int endBlock = FindEndBlock(lines, i, "endmethod");
 
@@ -75,7 +71,7 @@ namespace BOOSEInterpreter
                         {
                             method.BodyLines.Add(lines[j]);
                         }
-                        Methods[methodName] = method; // Now correctly saves "draw"
+                        Methods[methodName] = method; 
                         i = endBlock;
                     }
                     else if (command == "while")
@@ -83,7 +79,7 @@ namespace BOOSEInterpreter
                         string condition = string.Join(" ", parts, 1, parts.Length - 1);
                         int endBlock = FindEndBlock(lines, i, "endwhile");
 
-                        while (EvaluateCondition(condition, variables)) // Uses new helper
+                        while (EvaluateCondition(condition, variables)) 
                         {
                             ExecuteBlock(lines, i + 1, endBlock - 1, variables);
                         }
