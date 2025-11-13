@@ -32,6 +32,7 @@ Exception Handling:The try-catch block of the main loop contains exception handl
 | Added Parser class | Oct 24, 2025 |
 | Added DrawingCanvas class. | Oct 24, 2025 |
 | Feature: App successfully calls BOOSE.dll 'about' method. | Oct 24, 2025 |
+Commits link: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824/commits?author=JayChotaliya3824
 
 # Checkpoint
 #### 1 Version Control (1) 
@@ -93,6 +94,8 @@ Read the hand in instructions on myBeckett carefully to ensure you are submittin
 #### 7 Replaced Methods (2) \*
 	Method, Endmethod and Call commands are all implemented and tested.
 #### 8 Additional (web version, text-based version, extension to BOOSE itself, etc, discuss with your tutor) (2) 
+I focused on the implementation of the GUI interface, design patterns and the unit testing.
+
 \* You must rewrite the functionality and not try and "hack the system". I've tried to make it so you can't but who knows, either way, you've been told.
 ### [You MUST fill in this form whilst recording your YouTube Video AND submit it to myBeckett](https://forms.gle/j3eMcVbbjQ3sFrXw7)
 
