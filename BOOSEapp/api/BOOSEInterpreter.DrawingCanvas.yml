@@ -1,0 +1,787 @@
+### YamlMime:ManagedReference
+items:
+- uid: BOOSEInterpreter.DrawingCanvas
+  commentId: T:BOOSEInterpreter.DrawingCanvas
+  id: DrawingCanvas
+  parent: BOOSEInterpreter
+  children:
+  - BOOSEInterpreter.DrawingCanvas.#ctor(System.Windows.Forms.PictureBox)
+  - BOOSEInterpreter.DrawingCanvas.ClearCanvas
+  - BOOSEInterpreter.DrawingCanvas.DrawCircle(System.Int32)
+  - BOOSEInterpreter.DrawingCanvas.DrawRectangle(System.Int32,System.Int32)
+  - BOOSEInterpreter.DrawingCanvas.DrawTo(System.Int32,System.Int32)
+  - BOOSEInterpreter.DrawingCanvas.GetCurrentPosition
+  - BOOSEInterpreter.DrawingCanvas.MoveTo(System.Int32,System.Int32)
+  - BOOSEInterpreter.DrawingCanvas.Refresh
+  - BOOSEInterpreter.DrawingCanvas.SetFill(System.Boolean)
+  - BOOSEInterpreter.DrawingCanvas.SetPenColour(System.Drawing.Color)
+  langs:
+  - csharp
+  - vb
+  name: DrawingCanvas
+  nameWithType: DrawingCanvas
+  fullName: BOOSEInterpreter.DrawingCanvas
+  type: Class
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: DrawingCanvas
+    path: DrawingCanvas.cs
+    startLine: 10
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: This class manages the drawing state and operations on a PictureBox.
+  example: []
+  syntax:
+    content: public class DrawingCanvas
+    content.vb: Public Class DrawingCanvas
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BOOSEInterpreter.DrawingCanvas.#ctor(System.Windows.Forms.PictureBox)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.#ctor(System.Windows.Forms.PictureBox)
+  id: '#ctor(System.Windows.Forms.PictureBox)'
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: DrawingCanvas(PictureBox)
+  nameWithType: DrawingCanvas.DrawingCanvas(PictureBox)
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawingCanvas(System.Windows.Forms.PictureBox)
+  type: Constructor
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: .ctor
+    path: DrawingCanvas.cs
+    startLine: 21
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: It initializes a new DrawingCanvas linked to a PictureBox.
+  example: []
+  syntax:
+    content: public DrawingCanvas(PictureBox outputCanvas)
+    parameters:
+    - id: outputCanvas
+      type: System.Windows.Forms.PictureBox
+      description: The PictureBox to draw on.
+    content.vb: Public Sub New(outputCanvas As PictureBox)
+  overload: BOOSEInterpreter.DrawingCanvas.#ctor*
+  nameWithType.vb: DrawingCanvas.New(PictureBox)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.New(System.Windows.Forms.PictureBox)
+  name.vb: New(PictureBox)
+- uid: BOOSEInterpreter.DrawingCanvas.ClearCanvas
+  commentId: M:BOOSEInterpreter.DrawingCanvas.ClearCanvas
+  id: ClearCanvas
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: ClearCanvas()
+  nameWithType: DrawingCanvas.ClearCanvas()
+  fullName: BOOSEInterpreter.DrawingCanvas.ClearCanvas()
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: ClearCanvas
+    path: DrawingCanvas.cs
+    startLine: 33
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public void ClearCanvas()
+    content.vb: Public Sub ClearCanvas()
+  overload: BOOSEInterpreter.DrawingCanvas.ClearCanvas*
+- uid: BOOSEInterpreter.DrawingCanvas.Refresh
+  commentId: M:BOOSEInterpreter.DrawingCanvas.Refresh
+  id: Refresh
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: DrawingCanvas.Refresh()
+  fullName: BOOSEInterpreter.DrawingCanvas.Refresh()
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: Refresh
+    path: DrawingCanvas.cs
+    startLine: 53
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: This function forces the PictureBox to repaint itself.
+  example: []
+  syntax:
+    content: public void Refresh()
+    content.vb: Public Sub Refresh()
+  overload: BOOSEInterpreter.DrawingCanvas.Refresh*
+- uid: BOOSEInterpreter.DrawingCanvas.GetCurrentPosition
+  commentId: M:BOOSEInterpreter.DrawingCanvas.GetCurrentPosition
+  id: GetCurrentPosition
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentPosition()
+  nameWithType: DrawingCanvas.GetCurrentPosition()
+  fullName: BOOSEInterpreter.DrawingCanvas.GetCurrentPosition()
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: GetCurrentPosition
+    path: DrawingCanvas.cs
+    startLine: 61
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Gets the current pen position. For testing purposes.
+  example: []
+  syntax:
+    content: public Point GetCurrentPosition()
+    return:
+      type: System.Drawing.Point
+    content.vb: Public Function GetCurrentPosition() As Point
+  overload: BOOSEInterpreter.DrawingCanvas.GetCurrentPosition*
+- uid: BOOSEInterpreter.DrawingCanvas.SetFill(System.Boolean)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.SetFill(System.Boolean)
+  id: SetFill(System.Boolean)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: SetFill(bool)
+  nameWithType: DrawingCanvas.SetFill(bool)
+  fullName: BOOSEInterpreter.DrawingCanvas.SetFill(bool)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: SetFill
+    path: DrawingCanvas.cs
+    startLine: 66
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public void SetFill(bool state)
+    parameters:
+    - id: state
+      type: System.Boolean
+    content.vb: Public Sub SetFill(state As Boolean)
+  overload: BOOSEInterpreter.DrawingCanvas.SetFill*
+  nameWithType.vb: DrawingCanvas.SetFill(Boolean)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.SetFill(Boolean)
+  name.vb: SetFill(Boolean)
+- uid: BOOSEInterpreter.DrawingCanvas.MoveTo(System.Int32,System.Int32)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.MoveTo(System.Int32,System.Int32)
+  id: MoveTo(System.Int32,System.Int32)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: MoveTo(int, int)
+  nameWithType: DrawingCanvas.MoveTo(int, int)
+  fullName: BOOSEInterpreter.DrawingCanvas.MoveTo(int, int)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: MoveTo
+    path: DrawingCanvas.cs
+    startLine: 74
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Replaces the 'moveto' command.
+  example: []
+  syntax:
+    content: public void MoveTo(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    content.vb: Public Sub MoveTo(x As Integer, y As Integer)
+  overload: BOOSEInterpreter.DrawingCanvas.MoveTo*
+  nameWithType.vb: DrawingCanvas.MoveTo(Integer, Integer)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.MoveTo(Integer, Integer)
+  name.vb: MoveTo(Integer, Integer)
+- uid: BOOSEInterpreter.DrawingCanvas.DrawTo(System.Int32,System.Int32)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.DrawTo(System.Int32,System.Int32)
+  id: DrawTo(System.Int32,System.Int32)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: DrawTo(int, int)
+  nameWithType: DrawingCanvas.DrawTo(int, int)
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawTo(int, int)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: DrawTo
+    path: DrawingCanvas.cs
+    startLine: 83
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Replaces the 'drawto' command.
+  example: []
+  syntax:
+    content: public void DrawTo(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    content.vb: Public Sub DrawTo(x As Integer, y As Integer)
+  overload: BOOSEInterpreter.DrawingCanvas.DrawTo*
+  nameWithType.vb: DrawingCanvas.DrawTo(Integer, Integer)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.DrawTo(Integer, Integer)
+  name.vb: DrawTo(Integer, Integer)
+- uid: BOOSEInterpreter.DrawingCanvas.SetPenColour(System.Drawing.Color)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.SetPenColour(System.Drawing.Color)
+  id: SetPenColour(System.Drawing.Color)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: SetPenColour(Color)
+  nameWithType: DrawingCanvas.SetPenColour(Color)
+  fullName: BOOSEInterpreter.DrawingCanvas.SetPenColour(System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: SetPenColour
+    path: DrawingCanvas.cs
+    startLine: 94
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Replaces the 'pencolour' command.
+  example: []
+  syntax:
+    content: public void SetPenColour(Color color)
+    parameters:
+    - id: color
+      type: System.Drawing.Color
+    content.vb: Public Sub SetPenColour(color As Color)
+  overload: BOOSEInterpreter.DrawingCanvas.SetPenColour*
+- uid: BOOSEInterpreter.DrawingCanvas.DrawRectangle(System.Int32,System.Int32)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.DrawRectangle(System.Int32,System.Int32)
+  id: DrawRectangle(System.Int32,System.Int32)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: DrawRectangle(int, int)
+  nameWithType: DrawingCanvas.DrawRectangle(int, int)
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawRectangle(int, int)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: DrawRectangle
+    path: DrawingCanvas.cs
+    startLine: 101
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public void DrawRectangle(int width, int height)
+    parameters:
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    content.vb: Public Sub DrawRectangle(width As Integer, height As Integer)
+  overload: BOOSEInterpreter.DrawingCanvas.DrawRectangle*
+  nameWithType.vb: DrawingCanvas.DrawRectangle(Integer, Integer)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.DrawRectangle(Integer, Integer)
+  name.vb: DrawRectangle(Integer, Integer)
+- uid: BOOSEInterpreter.DrawingCanvas.DrawCircle(System.Int32)
+  commentId: M:BOOSEInterpreter.DrawingCanvas.DrawCircle(System.Int32)
+  id: DrawCircle(System.Int32)
+  parent: BOOSEInterpreter.DrawingCanvas
+  langs:
+  - csharp
+  - vb
+  name: DrawCircle(int)
+  nameWithType: DrawingCanvas.DrawCircle(int)
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawCircle(int)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/DrawingCanvas.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: DrawCircle
+    path: DrawingCanvas.cs
+    startLine: 115
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public void DrawCircle(int radius)
+    parameters:
+    - id: radius
+      type: System.Int32
+    content.vb: Public Sub DrawCircle(radius As Integer)
+  overload: BOOSEInterpreter.DrawingCanvas.DrawCircle*
+  nameWithType.vb: DrawingCanvas.DrawCircle(Integer)
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.DrawCircle(Integer)
+  name.vb: DrawCircle(Integer)
+references:
+- uid: BOOSEInterpreter
+  commentId: N:BOOSEInterpreter
+  href: BOOSEInterpreter.html
+  name: BOOSEInterpreter
+  nameWithType: BOOSEInterpreter
+  fullName: BOOSEInterpreter
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BOOSEInterpreter.DrawingCanvas.#ctor*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.#ctor
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas__ctor_System_Windows_Forms_PictureBox_
+  name: DrawingCanvas
+  nameWithType: DrawingCanvas.DrawingCanvas
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawingCanvas
+  nameWithType.vb: DrawingCanvas.New
+  fullName.vb: BOOSEInterpreter.DrawingCanvas.New
+  name.vb: New
+- uid: System.Windows.Forms.PictureBox
+  commentId: T:System.Windows.Forms.PictureBox
+  parent: System.Windows.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.forms.picturebox
+  name: PictureBox
+  nameWithType: PictureBox
+  fullName: System.Windows.Forms.PictureBox
+- uid: System.Windows.Forms
+  commentId: N:System.Windows.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Forms
+  nameWithType: System.Windows.Forms
+  fullName: System.Windows.Forms
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.forms
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.forms
+- uid: BOOSEInterpreter.DrawingCanvas.ClearCanvas*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.ClearCanvas
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_ClearCanvas
+  name: ClearCanvas
+  nameWithType: DrawingCanvas.ClearCanvas
+  fullName: BOOSEInterpreter.DrawingCanvas.ClearCanvas
+- uid: BOOSEInterpreter.DrawingCanvas.Refresh*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.Refresh
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_Refresh
+  name: Refresh
+  nameWithType: DrawingCanvas.Refresh
+  fullName: BOOSEInterpreter.DrawingCanvas.Refresh
+- uid: BOOSEInterpreter.DrawingCanvas.GetCurrentPosition*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.GetCurrentPosition
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_GetCurrentPosition
+  name: GetCurrentPosition
+  nameWithType: DrawingCanvas.GetCurrentPosition
+  fullName: BOOSEInterpreter.DrawingCanvas.GetCurrentPosition
+- uid: System.Drawing.Point
+  commentId: T:System.Drawing.Point
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.point
+  name: Point
+  nameWithType: Point
+  fullName: System.Drawing.Point
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: BOOSEInterpreter.DrawingCanvas.SetFill*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.SetFill
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_SetFill_System_Boolean_
+  name: SetFill
+  nameWithType: DrawingCanvas.SetFill
+  fullName: BOOSEInterpreter.DrawingCanvas.SetFill
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: BOOSEInterpreter.DrawingCanvas.MoveTo*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.MoveTo
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_MoveTo_System_Int32_System_Int32_
+  name: MoveTo
+  nameWithType: DrawingCanvas.MoveTo
+  fullName: BOOSEInterpreter.DrawingCanvas.MoveTo
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BOOSEInterpreter.DrawingCanvas.DrawTo*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.DrawTo
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_DrawTo_System_Int32_System_Int32_
+  name: DrawTo
+  nameWithType: DrawingCanvas.DrawTo
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawTo
+- uid: BOOSEInterpreter.DrawingCanvas.SetPenColour*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.SetPenColour
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_SetPenColour_System_Drawing_Color_
+  name: SetPenColour
+  nameWithType: DrawingCanvas.SetPenColour
+  fullName: BOOSEInterpreter.DrawingCanvas.SetPenColour
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: BOOSEInterpreter.DrawingCanvas.DrawRectangle*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.DrawRectangle
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_DrawRectangle_System_Int32_System_Int32_
+  name: DrawRectangle
+  nameWithType: DrawingCanvas.DrawRectangle
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawRectangle
+- uid: BOOSEInterpreter.DrawingCanvas.DrawCircle*
+  commentId: Overload:BOOSEInterpreter.DrawingCanvas.DrawCircle
+  href: BOOSEInterpreter.DrawingCanvas.html#BOOSEInterpreter_DrawingCanvas_DrawCircle_System_Int32_
+  name: DrawCircle
+  nameWithType: DrawingCanvas.DrawCircle
+  fullName: BOOSEInterpreter.DrawingCanvas.DrawCircle

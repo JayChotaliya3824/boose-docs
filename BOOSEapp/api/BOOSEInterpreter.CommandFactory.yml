@@ -1,0 +1,486 @@
+### YamlMime:ManagedReference
+items:
+- uid: BOOSEInterpreter.CommandFactory
+  commentId: T:BOOSEInterpreter.CommandFactory
+  id: CommandFactory
+  parent: BOOSEInterpreter
+  children:
+  - BOOSEInterpreter.CommandFactory.GetCommand(System.String)
+  - BOOSEInterpreter.CommandFactory.GetParser
+  - BOOSEInterpreter.CommandFactory.HasCommand(System.String)
+  - BOOSEInterpreter.CommandFactory.Instance(BOOSEInterpreter.Parser)
+  langs:
+  - csharp
+  - vb
+  name: CommandFactory
+  nameWithType: CommandFactory
+  fullName: BOOSEInterpreter.CommandFactory
+  type: Class
+  source:
+    remote:
+      path: BOOSEapp/CommandFactory.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: CommandFactory
+    path: CommandFactory.cs
+    startLine: 8
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Uses the Factory and Singleton patterns to create ICommand objects.
+  example: []
+  syntax:
+    content: public class CommandFactory
+    content.vb: Public Class CommandFactory
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BOOSEInterpreter.CommandFactory.Instance(BOOSEInterpreter.Parser)
+  commentId: M:BOOSEInterpreter.CommandFactory.Instance(BOOSEInterpreter.Parser)
+  id: Instance(BOOSEInterpreter.Parser)
+  parent: BOOSEInterpreter.CommandFactory
+  langs:
+  - csharp
+  - vb
+  name: Instance(Parser)
+  nameWithType: CommandFactory.Instance(Parser)
+  fullName: BOOSEInterpreter.CommandFactory.Instance(BOOSEInterpreter.Parser)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/CommandFactory.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: Instance
+    path: CommandFactory.cs
+    startLine: 12
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public static CommandFactory Instance(Parser parser = null)
+    parameters:
+    - id: parser
+      type: BOOSEInterpreter.Parser
+    return:
+      type: BOOSEInterpreter.CommandFactory
+    content.vb: Public Shared Function Instance(parser As Parser = Nothing) As CommandFactory
+  overload: BOOSEInterpreter.CommandFactory.Instance*
+- uid: BOOSEInterpreter.CommandFactory.GetCommand(System.String)
+  commentId: M:BOOSEInterpreter.CommandFactory.GetCommand(System.String)
+  id: GetCommand(System.String)
+  parent: BOOSEInterpreter.CommandFactory
+  langs:
+  - csharp
+  - vb
+  name: GetCommand(string)
+  nameWithType: CommandFactory.GetCommand(string)
+  fullName: BOOSEInterpreter.CommandFactory.GetCommand(string)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/CommandFactory.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: GetCommand
+    path: CommandFactory.cs
+    startLine: 59
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Factory method to get a command object.
+  example: []
+  syntax:
+    content: public ICommand GetCommand(string commandName)
+    parameters:
+    - id: commandName
+      type: System.String
+    return:
+      type: BOOSEInterpreter.ICommand
+    content.vb: Public Function GetCommand(commandName As String) As ICommand
+  overload: BOOSEInterpreter.CommandFactory.GetCommand*
+  nameWithType.vb: CommandFactory.GetCommand(String)
+  fullName.vb: BOOSEInterpreter.CommandFactory.GetCommand(String)
+  name.vb: GetCommand(String)
+- uid: BOOSEInterpreter.CommandFactory.HasCommand(System.String)
+  commentId: M:BOOSEInterpreter.CommandFactory.HasCommand(System.String)
+  id: HasCommand(System.String)
+  parent: BOOSEInterpreter.CommandFactory
+  langs:
+  - csharp
+  - vb
+  name: HasCommand(string)
+  nameWithType: CommandFactory.HasCommand(string)
+  fullName: BOOSEInterpreter.CommandFactory.HasCommand(string)
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/CommandFactory.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: HasCommand
+    path: CommandFactory.cs
+    startLine: 69
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public bool HasCommand(string commandName)
+    parameters:
+    - id: commandName
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasCommand(commandName As String) As Boolean
+  overload: BOOSEInterpreter.CommandFactory.HasCommand*
+  nameWithType.vb: CommandFactory.HasCommand(String)
+  fullName.vb: BOOSEInterpreter.CommandFactory.HasCommand(String)
+  name.vb: HasCommand(String)
+- uid: BOOSEInterpreter.CommandFactory.GetParser
+  commentId: M:BOOSEInterpreter.CommandFactory.GetParser
+  id: GetParser
+  parent: BOOSEInterpreter.CommandFactory
+  langs:
+  - csharp
+  - vb
+  name: GetParser()
+  nameWithType: CommandFactory.GetParser()
+  fullName: BOOSEInterpreter.CommandFactory.GetParser()
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/CommandFactory.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: GetParser
+    path: CommandFactory.cs
+    startLine: 77
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  summary: Gives commands access to parser functions like EvaluateExpression().
+  example: []
+  syntax:
+    content: public Parser GetParser()
+    return:
+      type: BOOSEInterpreter.Parser
+    content.vb: Public Function GetParser() As Parser
+  overload: BOOSEInterpreter.CommandFactory.GetParser*
+references:
+- uid: BOOSEInterpreter
+  commentId: N:BOOSEInterpreter
+  href: BOOSEInterpreter.html
+  name: BOOSEInterpreter
+  nameWithType: BOOSEInterpreter
+  fullName: BOOSEInterpreter
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BOOSEInterpreter.CommandFactory.Instance*
+  commentId: Overload:BOOSEInterpreter.CommandFactory.Instance
+  href: BOOSEInterpreter.CommandFactory.html#BOOSEInterpreter_CommandFactory_Instance_BOOSEInterpreter_Parser_
+  name: Instance
+  nameWithType: CommandFactory.Instance
+  fullName: BOOSEInterpreter.CommandFactory.Instance
+- uid: BOOSEInterpreter.Parser
+  commentId: T:BOOSEInterpreter.Parser
+  parent: BOOSEInterpreter
+  href: BOOSEInterpreter.Parser.html
+  name: Parser
+  nameWithType: Parser
+  fullName: BOOSEInterpreter.Parser
+- uid: BOOSEInterpreter.CommandFactory
+  commentId: T:BOOSEInterpreter.CommandFactory
+  parent: BOOSEInterpreter
+  href: BOOSEInterpreter.CommandFactory.html
+  name: CommandFactory
+  nameWithType: CommandFactory
+  fullName: BOOSEInterpreter.CommandFactory
+- uid: BOOSEInterpreter.CommandFactory.GetCommand*
+  commentId: Overload:BOOSEInterpreter.CommandFactory.GetCommand
+  href: BOOSEInterpreter.CommandFactory.html#BOOSEInterpreter_CommandFactory_GetCommand_System_String_
+  name: GetCommand
+  nameWithType: CommandFactory.GetCommand
+  fullName: BOOSEInterpreter.CommandFactory.GetCommand
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: BOOSEInterpreter.ICommand
+  commentId: T:BOOSEInterpreter.ICommand
+  parent: BOOSEInterpreter
+  href: BOOSEInterpreter.ICommand.html
+  name: ICommand
+  nameWithType: ICommand
+  fullName: BOOSEInterpreter.ICommand
+- uid: BOOSEInterpreter.CommandFactory.HasCommand*
+  commentId: Overload:BOOSEInterpreter.CommandFactory.HasCommand
+  href: BOOSEInterpreter.CommandFactory.html#BOOSEInterpreter_CommandFactory_HasCommand_System_String_
+  name: HasCommand
+  nameWithType: CommandFactory.HasCommand
+  fullName: BOOSEInterpreter.CommandFactory.HasCommand
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: BOOSEInterpreter.CommandFactory.GetParser*
+  commentId: Overload:BOOSEInterpreter.CommandFactory.GetParser
+  href: BOOSEInterpreter.CommandFactory.html#BOOSEInterpreter_CommandFactory_GetParser
+  name: GetParser
+  nameWithType: CommandFactory.GetParser
+  fullName: BOOSEInterpreter.CommandFactory.GetParser

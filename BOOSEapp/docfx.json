@@ -1,0 +1,34 @@
+{
+  "metadata": [
+    {
+      "src": [
+        { "src": ".", "files": ["BOOSEapp.csproj"] }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "**/*.md", "**/*.yml" ],
+        "exclude": [ "_site/**" ]
+      }
+    ],
+    "resource": [
+      { "files": ["images/**"] }
+    ],
+    "overwrite": [
+      { "files": ["apidoc/**.md"] }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "mysite",
+      "_enableSearch": true
+    },
+    "template": [
+      "default",
+      "modern"
+    ]
+  },
+  "serve": { "port": 8080 }
+}

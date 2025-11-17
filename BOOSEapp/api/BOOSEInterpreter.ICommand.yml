@@ -1,0 +1,226 @@
+### YamlMime:ManagedReference
+items:
+- uid: BOOSEInterpreter.ICommand
+  commentId: T:BOOSEInterpreter.ICommand
+  id: ICommand
+  parent: BOOSEInterpreter
+  children:
+  - BOOSEInterpreter.ICommand.Execute(BOOSEInterpreter.DrawingCanvas,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[])
+  langs:
+  - csharp
+  - vb
+  name: ICommand
+  nameWithType: ICommand
+  fullName: BOOSEInterpreter.ICommand
+  type: Interface
+  source:
+    remote:
+      path: BOOSEapp/ICommand.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: ICommand
+    path: ICommand.cs
+    startLine: 5
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: public interface ICommand
+    content.vb: Public Interface ICommand
+- uid: BOOSEInterpreter.ICommand.Execute(BOOSEInterpreter.DrawingCanvas,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[])
+  commentId: M:BOOSEInterpreter.ICommand.Execute(BOOSEInterpreter.DrawingCanvas,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[])
+  id: Execute(BOOSEInterpreter.DrawingCanvas,System.Collections.Generic.Dictionary{System.String,System.Object},System.String[])
+  parent: BOOSEInterpreter.ICommand
+  langs:
+  - csharp
+  - vb
+  name: Execute(DrawingCanvas, Dictionary<string, object>, string[])
+  nameWithType: ICommand.Execute(DrawingCanvas, Dictionary<string, object>, string[])
+  fullName: BOOSEInterpreter.ICommand.Execute(BOOSEInterpreter.DrawingCanvas, System.Collections.Generic.Dictionary<string, object>, string[])
+  type: Method
+  source:
+    remote:
+      path: BOOSEapp/ICommand.cs
+      branch: main
+      repo: https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824.git
+    id: Execute
+    path: ICommand.cs
+    startLine: 7
+  assemblies:
+  - BOOSEapp
+  namespace: BOOSEInterpreter
+  syntax:
+    content: void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
+    parameters:
+    - id: canvas
+      type: BOOSEInterpreter.DrawingCanvas
+    - id: variables
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    - id: args
+      type: System.String[]
+    content.vb: Sub Execute(canvas As DrawingCanvas, variables As Dictionary(Of String, Object), args As String())
+  overload: BOOSEInterpreter.ICommand.Execute*
+  nameWithType.vb: ICommand.Execute(DrawingCanvas, Dictionary(Of String, Object), String())
+  fullName.vb: BOOSEInterpreter.ICommand.Execute(BOOSEInterpreter.DrawingCanvas, System.Collections.Generic.Dictionary(Of String, Object), String())
+  name.vb: Execute(DrawingCanvas, Dictionary(Of String, Object), String())
+references:
+- uid: BOOSEInterpreter
+  commentId: N:BOOSEInterpreter
+  href: BOOSEInterpreter.html
+  name: BOOSEInterpreter
+  nameWithType: BOOSEInterpreter
+  fullName: BOOSEInterpreter
+- uid: BOOSEInterpreter.ICommand.Execute*
+  commentId: Overload:BOOSEInterpreter.ICommand.Execute
+  href: BOOSEInterpreter.ICommand.html#BOOSEInterpreter_ICommand_Execute_BOOSEInterpreter_DrawingCanvas_System_Collections_Generic_Dictionary_System_String_System_Object__System_String___
+  name: Execute
+  nameWithType: ICommand.Execute
+  fullName: BOOSEInterpreter.ICommand.Execute
+- uid: BOOSEInterpreter.DrawingCanvas
+  commentId: T:BOOSEInterpreter.DrawingCanvas
+  parent: BOOSEInterpreter
+  href: BOOSEInterpreter.DrawingCanvas.html
+  name: DrawingCanvas
+  nameWithType: DrawingCanvas
+  fullName: BOOSEInterpreter.DrawingCanvas
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

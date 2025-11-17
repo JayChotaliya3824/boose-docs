@@ -1,0 +1,382 @@
+{
+  "source_base_path": "C:/Users/User/source/repos/ase-boose-assignment-JayChotaliya3824/BOOSEapp",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.ArrayCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.ArrayCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.ArrayCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.BaseCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.BaseCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.BaseCommand",
+      "Summary": "<p sourcefile=\"api/BOOSEInterpreter.BaseCommand.yml\" sourcestartlinenumber=\"1\">A base class to share the evaluator and helper methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.CallCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.CallCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.CallCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.CircleCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.CircleCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.CircleCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.CommandFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.CommandFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.CommandFactory",
+      "Summary": "<p sourcefile=\"api/BOOSEInterpreter.CommandFactory.yml\" sourcestartlinenumber=\"1\">Uses the Factory and Singleton patterns to create ICommand objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.CommandHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.CommandHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.CommandHelper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.DrawToCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.DrawToCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.DrawToCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.DrawingCanvas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.DrawingCanvas.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.DrawingCanvas",
+      "Summary": "<p sourcefile=\"api/BOOSEInterpreter.DrawingCanvas.yml\" sourcestartlinenumber=\"1\">This class manages the drawing state and operations on a PictureBox.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.ExpressionEvaluator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.ExpressionEvaluator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.ExpressionEvaluator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.FillCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.FillCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.FillCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.Form1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.Form1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.Form1",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.ICommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.ICommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.ICommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.IntCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.IntCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.IntCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.MethodDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.MethodDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.MethodDefinition",
+      "Summary": "<p sourcefile=\"api/BOOSEInterpreter.MethodDefinition.yml\" sourcestartlinenumber=\"1\">A simple class to store a method's details.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.MoveToCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.MoveToCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.MoveToCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.Parser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.Parser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.PenColourCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.PenColourCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.PenColourCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.RealCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.RealCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.RealCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.RectangleCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.RectangleCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.RectangleCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.VarCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.VarCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter.VarCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BOOSEInterpreter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BOOSEInterpreter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BOOSEInterpreter",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

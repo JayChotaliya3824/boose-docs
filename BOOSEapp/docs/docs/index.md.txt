@@ -1,0 +1,79 @@
+# BOOSE Interpreter Documentation
+
+Welcome to the BOOSE Interpreter project documentation. This is a custom programming language interpreter built as part of Advanced Software Engineering coursework.
+
+## Overview
+
+The BOOSE Interpreter is a graphical programming language that allows users to create drawings through code commands. It features a complete parser, command execution system, and GUI interface.
+
+## Key Features
+
+- **Drawing Commands**: moveto, drawto, circle, rect, pencolour, write
+- **Control Structures**: while loops, for loops, if-else conditionals
+- **Variable Support**: integers, real numbers, arrays
+- **Method Definitions**: Create and call custom methods with parameters
+- **Expression Evaluation**: Mathematical expressions and variable operations
+- **GUI Interface**: Form-based interface with program window, output window, and run button
+
+## Architecture Highlights
+
+The interpreter uses a central `ExecuteBlock` method to parse and execute BOOSE programs. It creates and runs `ICommand` objects through a `CommandFactory` using the **Singleton** and **Factory** design patterns.
+
+### Core Components
+
+- **Parser**: Reads BOOSE code line by line and creates command objects
+- **CommandFactory**: Creates appropriate command objects (Factory Pattern)
+- **ICommand Interface**: All commands implement this interface (Strategy Pattern)
+- **ExpressionEvaluator**: Handles mathematical expressions and variable resolution
+- **MethodDefinition**: Stores and manages custom method definitions
+
+## Quick Start
+
+1. Load a BOOSE program file or write code in the program window
+2. Click the Run button to execute
+3. View the output in the drawing canvas and output window
+
+## Documentation Sections
+
+- [Getting Started](articles/getting-started.md) - Installation and first steps
+- [Architecture & Design Patterns](articles/architecture.md) - System design and patterns used
+- [Error Handling](articles/error-handling.md) - Exception handling approach
+- [Unit Testing](articles/testing.md) - Test coverage and running tests
+- [API Reference](api/index.md) - Complete API documentation
+
+## Implementation Challenges
+
+### Control Structures
+Loops (while, for) were implemented by searching for block end markers (endwhile, endif) and recursively calling `ExecuteBlock` based on condition evaluation.
+
+### Methods
+The method system recognizes signatures (e.g., `method draw(p)`), saves lines to a `MethodDefinition` object, and creates new variable scopes when called. Proper parameter parsing was critical to avoid index-out-of-range errors.
+
+### Expression Evaluation
+A dedicated `ExpressionEvaluator` class handles expression resolution, separating concerns from the main parser logic.
+
+## Design Patterns
+
+- **Factory Pattern**: `CommandFactory` creates command objects based on input
+- **Singleton Pattern**: Ensures single instance of key components
+- **Strategy Pattern**: `ICommand` interface allows extensible command system
+- **Interface Segregation**: All commands implement `ICommand` for consistency
+
+## Project Status
+
+✅ Version Control with Git  
+✅ XML Documentation  
+✅ Unit Tests  
+✅ Error Handling  
+✅ Design Patterns Implementation  
+✅ All BOOSE Features (variables, control structures, methods)  
+
+## Repository
+
+GitHub Repository: [ASE BOOSE Assignment](https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824)
+
+## Author
+
+**Group 3** - Jay Chotaliya  
+Advanced Software Engineering Course  
+October 2025
