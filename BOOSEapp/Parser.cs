@@ -99,7 +99,8 @@ namespace BOOSEInterpreter
 
                 if (isDefiningMethod)
                 {
-                    if (line.ToLower().StartsWith("end method"))
+                    // Fix: Handle 'end method' and 'endmethod'
+                    if (line.ToLower().StartsWith("end method") || line.ToLower() == "endmethod")
                     {
                         Methods[currentMethodName.ToLower()] = currentMethod;
                         isDefiningMethod = false;
@@ -137,7 +138,8 @@ namespace BOOSEInterpreter
                 {
                     HandleEndFor();
                 }
-                else if (line.ToLower().StartsWith("end while"))
+                // Fix: Handle 'end while' and 'endwhile'
+                else if (line.ToLower().StartsWith("end while") || line.ToLower() == "endwhile")
                 {
                     HandleEndWhile();
                 }
@@ -270,7 +272,8 @@ namespace BOOSEInterpreter
                     string nextLine = programLines[currentLineIndex].Trim().ToLower();
                     if (nextLine.StartsWith("while"))
                         depth++;
-                    else if (nextLine.StartsWith("end while"))
+                    // Fix: Handle 'end while' and 'endwhile'
+                    else if (nextLine.StartsWith("end while") || nextLine == "endwhile")
                         depth--;
                     currentLineIndex++;
                 }
@@ -423,18 +426,47 @@ namespace BOOSEInterpreter
         /// <param name="line">The line containing the method signature.</param>
         private void ParseMethodDefinition(string line)
         {
-            string[] parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            string methodName = parts[2];
+            // Support both "method int name param" and "method name(param)"
+            string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string methodName = "";
+            string paramString = "";
+
+            if (line.Contains("("))
+            {
+                // Handle "method name(params)" syntax
+                int openParen = line.IndexOf('(');
+                int closeParen = line.LastIndexOf(')');
+
+                string beforeParen = line.Substring(0, openParen).Trim();
+                string[] nameParts = beforeParen.Split(' ');
+                methodName = nameParts.Last(); // Get the last word before '(' as name
+
+                if (closeParen > openParen)
+                {
+                    paramString = line.Substring(openParen + 1, closeParen - openParen - 1);
+                }
+            }
+            else
+            {
+                // Handle classic syntax "method int name ..."
+                if (parts.Length < 3)
+                {
+                    // Fallback for "method name" (no return type or untyped)
+                    if (parts.Length == 2) methodName = parts[1];
+                    else throw new BOOSEException("Invalid method definition syntax");
+                }
+                else
+                {
+                    methodName = parts[2];
+                    paramString = string.Join(" ", parts.Skip(3));
+                }
+            }
 
             currentMethod = new MethodDefinition();
             currentMethodName = methodName;
             isDefiningMethod = true;
 
-            if (parts.Length > 3)
-            {
-                string paramString = string.Join(" ", parts.Skip(3));
-                ParseMethodParameters(paramString, currentMethod);
-            }
+            ParseMethodParameters(paramString, currentMethod);
         }
 
         /// <summary>
@@ -454,13 +486,23 @@ namespace BOOSEInterpreter
             }
             else
             {
+                var words = paramString.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Fix: Handle single untyped parameters like "p" in "method draw(p)"
+                if (words.Length == 1)
+                {
+                    method.Parameters.Add(words[0]);
+                    return;
+                }
+
                 // Handle parameters without commas (e.g. "int a int b")
-                var words = paramString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 var tempParams = new List<string>();
                 for (int i = 0; i < words.Length; i += 2)
                 {
                     if (i + 1 < words.Length)
                         tempParams.Add(words[i] + " " + words[i + 1]);
+                    else
+                        tempParams.Add(words[i]); // Handle trailing single param if any
                 }
                 paramParts = tempParams.ToArray();
             }
@@ -470,9 +512,12 @@ namespace BOOSEInterpreter
                 string trimmed = paramPart.Trim();
                 if (!string.IsNullOrEmpty(trimmed))
                 {
+                    // If param is typed "int a", extract "a". If just "a", use "a".
                     string[] typeAndName = trimmed.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                     if (typeAndName.Length >= 2)
                         method.Parameters.Add(typeAndName[typeAndName.Length - 1]);
+                    else
+                        method.Parameters.Add(typeAndName[0]);
                 }
             }
         }

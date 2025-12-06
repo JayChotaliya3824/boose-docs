@@ -42,14 +42,41 @@ namespace BOOSEInterpreter
         /// </exception>
         public void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
         {
+            // Expected syntax: "call methodName arg1 arg2" OR "call methodName(arg1, arg2)"
             if (args == null || args.Length < 2)
                 throw new BOOSEException("Call command requires at least a method name.");
 
-            string methodName = args[1].Trim().ToLower();
-            string[] callArgs = new string[args.Length - 2];
-            if (callArgs.Length > 0)
+            string rawMethodName = args[1].Trim();
+            string methodName;
+            string[] callArgs;
+
+            // Fix: Support "call draw(x)" syntax
+            if (rawMethodName.Contains("(") && rawMethodName.EndsWith(")"))
             {
-                Array.Copy(args, 2, callArgs, 0, callArgs.Length);
+                int pFrom = rawMethodName.IndexOf("(") + 1;
+                int pTo = rawMethodName.LastIndexOf(")");
+                methodName = rawMethodName.Substring(0, pFrom - 1).ToLower();
+                string argsContent = rawMethodName.Substring(pFrom, pTo - pFrom);
+
+                if (string.IsNullOrWhiteSpace(argsContent))
+                {
+                    callArgs = new string[0];
+                }
+                else
+                {
+                    // Assuming args are comma separated inside ()
+                    callArgs = argsContent.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                }
+            }
+            else
+            {
+                // Classic space separated syntax
+                methodName = rawMethodName.ToLower();
+                callArgs = new string[args.Length - 2];
+                if (callArgs.Length > 0)
+                {
+                    Array.Copy(args, 2, callArgs, 0, callArgs.Length);
+                }
             }
 
             if (!parser.Methods.TryGetValue(methodName, out MethodDefinition method))
@@ -68,13 +95,14 @@ namespace BOOSEInterpreter
             for (int i = 0; i < method.Parameters.Count; i++)
             {
                 string paramName = method.Parameters[i];
-                object evaluatedValue = evaluator.Evaluate(callArgs[i], variables);
+                // Trim args to remove spaces from "x, y" -> " y"
+                object evaluatedValue = evaluator.Evaluate(callArgs[i].Trim(), variables);
                 localVars[paramName] = evaluatedValue;
             }
 
             parser.ExecuteMethodBodyBlock(method.BodyLines.ToArray(), localVars);
 
-            // Fix: Check for return value case-insensitively. 
+            // Fix: Check for return value case-insensitively.
             // The user might assign "testMethod = ..." inside the method, matching the method name casing.
             string returnVariable = localVars.Keys.FirstOrDefault(k => k.Equals(methodName, StringComparison.OrdinalIgnoreCase));
 
