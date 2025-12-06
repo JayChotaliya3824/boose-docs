@@ -14,6 +14,6 @@ peek y = prices 5
 write "£"+y
 array real logs 10
 poke logs 5 = 100.01
-peek z = log 5
+peek z = logs 5
 moveto 0,25
 write z

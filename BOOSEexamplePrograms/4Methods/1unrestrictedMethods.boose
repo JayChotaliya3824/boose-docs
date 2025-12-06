@@ -5,9 +5,9 @@ method int divMethod int one, int two
   divMethod = one / two
 end method
 int global = 55
-call mullMethod 10 5
+call mulMethod 10 5
 moveto 100,100
-write mullMethod
+write mulMethod
 call divMethod 10 5
 moveto 100,200
 write divMethod

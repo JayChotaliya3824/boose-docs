@@ -73,9 +73,9 @@
         <article data-uid="">
 <h1 id="boose-interpreter-documentation">BOOSE Interpreter Documentation</h1>
 
-<p>Welcome to the BOOSE Interpreter project documentation. This is a custom programming language interpreter built as part of Advanced Software Engineering coursework.</p>
+<p>Welcome to the BOOSE Interpreter project documentation.</p>
 <h2 id="overview">Overview</h2>
-<p>The BOOSE Interpreter is a graphical programming language that allows users to create drawings through code commands. It features a complete parser, command execution system, and GUI interface.</p>
+<p>The BOOSE Interpreter is the graphical programming language that allows users to create drawings through code commands. It has the features of a complete parser, command execution system, and GUI interface.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
 <li><strong>Drawing Commands</strong>: moveto, drawto, circle, rect, pencolour, write</li>
@@ -89,25 +89,25 @@
 <p>The interpreter uses a central <code>ExecuteBlock</code> method to parse and execute BOOSE programs. It creates and runs <code>ICommand</code> objects through a <code>CommandFactory</code> using the <strong>Singleton</strong> and <strong>Factory</strong> design patterns.</p>
 <h3 id="core-components">Core Components</h3>
 <ul>
-<li><strong>Parser</strong>: Reads BOOSE code line by line and creates command objects</li>
-<li><strong>CommandFactory</strong>: Creates appropriate command objects (Factory Pattern)</li>
-<li><strong>ICommand Interface</strong>: All commands implement this interface (Strategy Pattern)</li>
-<li><strong>ExpressionEvaluator</strong>: Handles mathematical expressions and variable resolution</li>
-<li><strong>MethodDefinition</strong>: Stores and manages custom method definitions</li>
+<li><strong>Parser</strong>: It reads the BOOSE code line by line and creates command objects</li>
+<li><strong>CommandFactory</strong>: It creates the appropriate command objects (Factory Pattern)</li>
+<li><strong>ICommand Interface</strong>: The all commands implement this interface (Strategy Pattern)</li>
+<li><strong>ExpressionEvaluator</strong>: It handles the mathematical expressions and the variable resolution</li>
+<li><strong>MethodDefinition</strong>: It stores and manages the custom method definitions</li>
 </ul>
 <h2 id="implementation-challenges">Implementation Challenges</h2>
 <h3 id="control-structures">Control Structures</h3>
-<p>Loops (while, for) were implemented by searching for block end markers (endwhile, endif) and recursively calling <code>ExecuteBlock</code> based on condition evaluation.</p>
+<p>The loops (while, for) were implemented by searching for block end markers (endwhile, endif) and  recursively calling the <code>ExecuteBlock</code> based on condition tested.</p>
 <h3 id="methods">Methods</h3>
-<p>The method system recognizes signatures (e.g., <code>method draw(p)</code>), saves lines to a <code>MethodDefinition</code> object, and creates new variable scopes when called. Proper parameter parsing was critical to avoid index-out-of-range errors.</p>
+<p>The method system recognizes the signatures (e.g., <code>method draw(p)</code>), saves lines to the <code>MethodDefinition</code> object, and then creates new variable scopes when called. The proper parameter parsing was critical to avoid index-out-of-bound errors.</p>
 <h3 id="expression-evaluation">Expression Evaluation</h3>
-<p>A dedicated <code>ExpressionEvaluator</code> class handles expression resolution, separating concerns from the main parser logic.</p>
+<p>A dedicated <code>ExpressionEvaluator</code> class handles the expression resolution, separating the concerns from the main parser logic.</p>
 <h2 id="design-patterns">Design Patterns</h2>
 <ul>
-<li><strong>Factory Pattern</strong>: <code>CommandFactory</code> creates command objects based on input</li>
-<li><strong>Singleton Pattern</strong>: Ensures single instance of key components</li>
-<li><strong>Strategy Pattern</strong>: <code>ICommand</code> interface allows extensible command system</li>
-<li><strong>Interface Segregation</strong>: All commands implement <code>ICommand</code> for consistency</li>
+<li><strong>Factory Pattern</strong>: <code>CommandFactory</code> creates the command objects based on user's input</li>
+<li><strong>Singleton Pattern</strong>: It ensures single instance of the key components</li>
+<li><strong>Strategy Pattern</strong>: <code>ICommand</code> interface allows the extensible command system</li>
+<li><strong>Interface Segregation</strong>: The all commands implement <code>ICommand</code> for the consistency</li>
 </ul>
 <h2 id="repository">Repository</h2>
 <p>GitHub Repository: <a href="https://github.com/ASE2025repos/ase-boose-assignment-JayChotaliya3824">ASE BOOSE Assignment</a></p>

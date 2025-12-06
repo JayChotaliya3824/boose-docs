@@ -1,16 +1,49 @@
-﻿// IntCommand.cs
+using System;
 using System.Collections.Generic;
 
 namespace BOOSEInterpreter
 {
+    /// <summary>
+    /// The IntCommand class is implemented to facilitate the declaration and assignment of integer variables.
+    /// Functionality is provided to parse variable declaration syntax and evaluate initial values if supplied.
+    /// </summary>
     public class IntCommand : ICommand
     {
+        /// <summary>
+        /// The command is executed to declare a new integer variable.
+        /// The argument list is validated, and if an assignment expression is present, it is evaluated and assigned to the variable.
+        /// If no assignment is provided, the variable is initialized to zero.
+        /// </summary>
+        /// <param name="canvas">The drawing canvas is passed to the method execution context.</param>
+        /// <param name="variables">The dictionary of global variables is accessed to store the new integer variable.</param>
+        /// <param name="args">The command arguments are parsed to extract the variable name and optional initialization expression.</param>
+        /// <exception cref="BOOSEException">
+        /// An exception is thrown if the syntax is invalid or if a required expression is missing.
+        /// </exception>
         public void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
         {
-            // Usage: "int x = 10"
+            if (args.Length < 2)
+                throw new BOOSEException("Invalid int syntax. Use: int name [ = expression ]");
+
             string varName = args[1];
-            int value = int.Parse(args[3]);
-            variables[varName] = value;
+
+            if (args.Length >= 4 && args[2] == "=")
+            {
+                int startIndex = 3;
+                int count = args.Length - startIndex;
+
+                if (count <= 0)
+                    throw new BOOSEException($"No expression provided for variable '{varName}'");
+
+                string expression = string.Join(" ", args, startIndex, count);
+                var evaluator = new ExpressionEvaluator();
+                object result = evaluator.Evaluate(expression, variables);
+                variables[varName] = Convert.ToInt32(result);
+            }
+            else
+            {
+                variables[varName] = 0;
+            }
         }
     }
 }
