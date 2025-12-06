@@ -10,9 +10,15 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <!-- <ItemGroup>
+    <Reference Include="BOOSE">
+      <HintPath>C:\Users\User\Downloads\BOOSE.dll</HintPath>
+    </Reference>
+  </ItemGroup> -->
+
   <ItemGroup>
     <Reference Include="BOOSE">
-      <HintPath>..\..\BOOSE.dll</HintPath>
+      <HintPath>BOOSE.dll</HintPath>
     </Reference>
   </ItemGroup>
 

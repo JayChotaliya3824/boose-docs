@@ -1,76 +1,92 @@
-﻿// CallCommand.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 namespace BOOSEInterpreter
 {
+    /// <summary>
+    /// The CallCommand class is implemented to facilitate the invocation of user-defined methods.
+    /// Parameters are parsed, evaluated, and passed to the method body for execution within a local variable scope.
+    /// </summary>
     public class CallCommand : ICommand
     {
+        /// <summary>
+        /// A reference to the main Parser instance is maintained to access the list of defined methods and execution logic.
+        /// </summary>
         private readonly Parser parser;
+
+        /// <summary>
+        /// An instance of the ExpressionEvaluator is utilized to resolve parameter values before method execution.
+        /// </summary>
         private readonly ExpressionEvaluator evaluator = new ExpressionEvaluator();
 
+        /// <summary>
+        /// A new instance of the CallCommand class is initialized with a reference to the Parser.
+        /// </summary>
+        /// <param name="parser">The Parser instance is provided to allow access to method definitions and execution context.</param>
         public CallCommand(Parser parser)
         {
             this.parser = parser;
         }
 
+        /// <summary>
+        /// The command is executed to call a specific method with the provided arguments.
+        /// The method definition is retrieved, arguments are evaluated and mapped to parameters, and the method body is executed.
+        /// Return values are captured and stored in the global variable scope if applicable.
+        /// </summary>
+        /// <param name="canvas">The drawing canvas is passed to the method execution context.</param>
+        /// <param name="variables">The global variable dictionary is accessed for argument evaluation and return value storage.</param>
+        /// <param name="args">The command arguments are processed to identify the method name and parameters.</param>
+        /// <exception cref="BOOSEException">
+        /// An exception is thrown if the method is not found, or if there is a mismatch in the number of arguments provided.
+        /// </exception>
         public void Execute(DrawingCanvas canvas, Dictionary<string, object> variables, string[] args)
         {
-            // Input example: args = [ "call", "draw(x)" ]
-            string fullCall = string.Join(" ", args.Skip(1)); // Combine everything after 'call'
+            if (args == null || args.Length < 2)
+                throw new BOOSEException("Call command requires at least a method name.");
 
-            // --- Parse method name and arguments ---
-            string methodName;
-            string[] callArgs = Array.Empty<string>();
-
-            int openParen = fullCall.IndexOf('(');
-            int closeParen = fullCall.LastIndexOf(')');
-
-            if (openParen > 0 && closeParen > openParen)
+            string methodName = args[1].Trim().ToLower();
+            string[] callArgs = new string[args.Length - 2];
+            if (callArgs.Length > 0)
             {
-                methodName = fullCall.Substring(0, openParen).Trim();
-                string paramList = fullCall.Substring(openParen + 1, closeParen - openParen - 1);
-                callArgs = paramList.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                                    .Select(p => p.Trim())
-                                    .ToArray();
-            }
-            else
-            {
-                methodName = fullCall.Trim();
+                Array.Copy(args, 2, callArgs, 0, callArgs.Length);
             }
 
-            // --- Validate method existence ---
-            if (!parser.Methods.ContainsKey(methodName))
-                throw new Exception($"Method '{methodName}' not defined.");
+            if (!parser.Methods.TryGetValue(methodName, out MethodDefinition method))
+            {
+                throw new BOOSEException($"Method '{methodName}' is not defined.");
+            }
 
-            MethodDefinition method = parser.Methods[methodName];
-
-            // --- Validate argument count ---
             if (callArgs.Length != method.Parameters.Count)
-                throw new Exception($"Argument count mismatch for method '{methodName}'");
+            {
+                throw new BOOSEException(
+                    $"Argument count mismatch for method '{methodName}'. " +
+                    $"Expected {method.Parameters.Count} arguments, but got {callArgs.Length}.");
+            }
 
-            // --- Local variable scope for method ---
-            var localVars = new Dictionary<string, object>(variables);
-
+            var localVars = new Dictionary<string, object>();
             for (int i = 0; i < method.Parameters.Count; i++)
             {
                 string paramName = method.Parameters[i];
-                string argValue = callArgs[i];
-
-                // Evaluate the argument (e.g., x or 10 + 5)
-                object evaluated = evaluator.Evaluate(argValue, variables);
-                localVars[paramName] = evaluated;
+                object evaluatedValue = evaluator.Evaluate(callArgs[i], variables);
+                localVars[paramName] = evaluatedValue;
             }
 
-            // --- Execute the method block ---
-            MethodInfo execBlock = typeof(Parser).GetMethod(
-                "ExecuteBlock",
-                BindingFlags.NonPublic | BindingFlags.Instance
-            );
+            parser.ExecuteMethodBodyBlock(method.BodyLines.ToArray(), localVars);
 
-            execBlock.Invoke(parser, new object[] { method.BodyLines.ToArray(), 0, method.BodyLines.Count - 1, localVars });
+            // Fix: Check for return value case-insensitively. 
+            // The user might assign "testMethod = ..." inside the method, matching the method name casing.
+            string returnVariable = localVars.Keys.FirstOrDefault(k => k.Equals(methodName, StringComparison.OrdinalIgnoreCase));
+
+            if (returnVariable != null)
+            {
+                variables[methodName] = localVars[returnVariable];
+            }
+            else
+            {
+                // If no return value found (void method), default to 0
+                variables[methodName] = 0;
+            }
         }
     }
 }
